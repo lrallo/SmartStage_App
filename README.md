@@ -1,4 +1,4 @@
 ## 📊 Project Presentation
 
-[![Presentation Cover](docs\PresentationCover.pdf)](docs\Presentation.pdf)
+[![Presentation Cover](docs\PresentationCover.png)](docs\Presentation.pdf)
 
