@@ -26,7 +26,6 @@ class GpxService{
         String fileName = result.files.single.name;
         
         
-
         try {
           // 2. Leggo il contenuto
           String contenutoXml = utf8.decode(result.files.single.bytes!); 

@@ -5,14 +5,14 @@ class ElevationProfileChart extends StatelessWidget {
   final List<double> distanceProfile;
   final List<double> elevationProfile;
   final List<double> cutDistances;
-  final int? selectedStageIndex; // <-- NUOVO PARAMETRO
+  final int? selectedStageIndex;
 
   const ElevationProfileChart({
     super.key,
     required this.distanceProfile,
     required this.elevationProfile,
     required this.cutDistances,
-    this.selectedStageIndex, // <-- AGGIUNTO AL COSTRUTTORE
+    this.selectedStageIndex, 
   });
 
   @override
@@ -116,7 +116,7 @@ class ElevationProfileChart extends StatelessWidget {
             verticalLines: cutDistances.map((cutDist) {
               return VerticalLine(
                 x: cutDist,
-                color: Colors.grey.withOpacity(0.4), // Linee di taglio più discrete
+                color: Colors.grey.withOpacity(0.4), 
                 strokeWidth: 1.5,
                 dashArray: [5, 5],
               );

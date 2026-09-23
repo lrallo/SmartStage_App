@@ -58,27 +58,19 @@ class PerformanceAnalyzer {
     // 2. Calcolo Medie
     double avgDailyWalk = totalWalk / analysisWindow;
     double avgDailyBike = totalBike / analysisWindow;
-    double overallDailyEffort = avgDailyWalk + (avgDailyBike * 0.4); // La bici pesa un po' meno per definire il "livello"
 
-    // 3. Assegnazione di un Livello descrittivo per l'UI
-    String fitnessProfile = "Sedentario";
-    if (overallDailyEffort > 12) fitnessProfile = "Atleta Elite";
-    else if (overallDailyEffort > 8) fitnessProfile = "Atleta";
-    else if (overallDailyEffort > 4) fitnessProfile = "Molto Attivo";
-    else if (overallDailyEffort > 1.5) fitnessProfile = "Attivo";
 
     // 4. Stima della "Sopportazione" (Endurance) in un viaggio a tappe
-    // Calcoliamo il Carico Cronico Ibrido (aggiungendo il 15 o 35%  dell'altro sport)
+    // Calcoliamo il Carico Cronico Ibrido (aggiungendo il 15 o 35%  dell'altro sport)- CTL: Chronic Training Load
     double chronicDailyWalk = (avgDailyWalk + (avgDailyBike * 0.15)) ;
     double chronicDailyBike = (avgDailyBike + (avgDailyWalk * 0.35)) ;
-    // Formula ACWR Gabbett
+    // Formula ACWR Gabbett: AcuteLoad/ChronicLoad > 1.5  --> danger zone, risk of injury
     double maxWalkEndurance = 10.0 + (chronicDailyWalk * 1.5);
     double maxBikeEndurance = 30.0 + (chronicDailyBike * 1.5);
 
     print('\n---- Analisi completata ----');
     print('Finestra di analisi: $analysisWindow giorni, Giorni attivi: $activeDays');
     print('Sforzo medio giornaliero: Walk ${avgDailyWalk.toStringAsFixed(2)} km, Bike ${avgDailyBike.toStringAsFixed(2)} km');
-    print('Livello di fitness stimato: $fitnessProfile');  
     print('Endurance stimata: Walk ${maxWalkEndurance.toStringAsFixed(2)} km, Bike ${maxBikeEndurance.toStringAsFixed(2)} km');
     print('mappa sforzo giornaliero (Walk): $dailyWalkMap');
     print('mappa sforzo giornaliero (Bike): $dailyBikeMap');

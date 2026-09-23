@@ -17,11 +17,10 @@ class ChartCard extends StatelessWidget {
     required this.barColor,
   });
 
-  // NUOVA FUNZIONE: Crea l'intestazione con l'icona nel riquadro colorato
   Widget _buildHeader() {
     return Row(
       children: [
-        // Riquadro pastello per l'icona (stile uniformato con TrainingBody)
+        // Riquadro pastello per l'icona 
         Container(
           padding: const EdgeInsets.all(8), // Spazio interno tra l'icona e il bordo del riquadro
           decoration: BoxDecoration(
@@ -38,7 +37,7 @@ class ChartCard extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               title,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14), // Font rimpicciolito
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14), 
             ),
           ),
         ),

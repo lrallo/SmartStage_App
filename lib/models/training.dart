@@ -10,7 +10,7 @@ class Training {
   final int steps;
   final double elevationGain;
   final int averageHR;
-  final double activeDuration; // <-- AGGIUNTO per stimare la distanza in bici
+  final double activeDuration; 
 
   // Getter comodo per raggruppare i dati nell'algoritmo (es. "2026-05-22")
   String get dateString => DateFormat('yyyy-MM-dd').format(timestamp);

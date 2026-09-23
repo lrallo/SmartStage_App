@@ -103,7 +103,7 @@ class LoginPage extends StatelessWidget {
                                   const SnackBar(
                                     backgroundColor: Colors.red,
                                     behavior: SnackBarBehavior.floating,
-                                    content: Text("You must enter credentials!"), // Il messaggio in inglese che volevi
+                                    content: Text("You must enter credentials!"), 
                                   ),
                                 );
                               return; // Esce dalla funzione senza fare la chiamata al server
